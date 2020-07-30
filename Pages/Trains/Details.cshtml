@@ -1,0 +1,43 @@
+﻿@page
+@model Assignment4.Pages.Trains.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Train</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Train.TrainName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Train.TrainName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Train.TrainNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Train.TrainNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Train.TrainStation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Train.TrainStation)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Train.TicketPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Train.TicketPrice)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Train.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

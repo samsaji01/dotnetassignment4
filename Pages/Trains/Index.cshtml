@@ -1,0 +1,54 @@
+﻿@page
+@model Assignment4.Pages.Trains.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Train[0].TrainName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Train[0].TrainNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Train[0].TrainStation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Train[0].TicketPrice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Train) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainStation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketPrice)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
